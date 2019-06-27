@@ -1,0 +1,23 @@
+<h1>Add a song</h1>
+
+<form method="POST" action="/songs">
+	<input type="text" name="name" placeholder="Song Name"/>
+	<br>
+	<select name="artist_id">
+		<option value="">Please choose an artist:</option>
+		<% @artists.each do |artist| %>
+			<option value="<%= artist.id %>"><%=artist.name%></option>
+		<% end %>
+	</select>
+	<br>
+	<select name="genre_id">
+		<option value="">Please choose a genre:</option>
+		<% @genres.each do |genre| %>
+			<option value="<%= genre.id %>"><%=genre.name%></option>
+		<% end %>
+	</select>
+	<br>
+	<input type="submit" value="Add Song!">
+</form>
+
+<a href="/">Homepage</a>
